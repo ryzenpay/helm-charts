@@ -1,0 +1,13 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: HelmOp
+metadata:
+  name: gatus
+  namespace: fleet-local
+spec:
+  helm:
+    pollingInterval: 1m
+    repo: https://twin.github.io/helm-charts
+    chart: gatus
+    valuesFiles:
+      - gatus/values.yaml
+  namespace: gatus

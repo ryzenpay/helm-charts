@@ -1,0 +1,27 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: HelmOp
+metadata:
+  name: keycloak
+  namespace: fleet-local
+spec:
+  helm:
+    pollingInterval: 1m
+    repo: codecentric/keycloak
+    chart: keycloak
+    values:
+      ingress:
+        enabled: true
+        servicePort: http
+        annotations: 
+          cert-manager.io/cluster-issuer: cert-issuer
+        labels: {}
+        rules:
+          - host: auth.ryzen.me
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - auth.ryzen.me
+            secretName: keycloak-tls
+  namespace: keycloak
