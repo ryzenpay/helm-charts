@@ -1,0 +1,29 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: HelmOp
+metadata:
+  name: signoz
+  namespace: fleet-local
+spec:
+  helm:
+    pollingInterval: 1m
+    repo: https://gitlab.com/api/v4/projects/30221184/packages/helm/stable/
+    chart: outline
+    valuesFiles:
+      - outline/values.yaml
+    valuesFrom:
+      - secretKeyRef:
+          name: outline-secret
+    values:
+      secretKey: ${secretKey}
+      utilsSecret: ${utilsSecret}
+      env:
+        SMTP_PASSWORD: ${SMPT_PASSWORD}
+      postgresql:
+        postgresqlPassword: ${postgresqlPassword}
+        postgresqlPostgresPassword: ${postgresqlPostgresPassword}
+      minio:
+        secretKey:
+          password: ${miniosecretKey}
+        accessKey:
+          password: ${minioaccessKey}
+  namespace: outline

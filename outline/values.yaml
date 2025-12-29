@@ -1,0 +1,44 @@
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: cert-issuer
+  hosts:
+    - host: outline.ryzen.me
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          port: 8080
+  tls: 
+    - secretName: outline-tls
+      hosts:
+        - outline.ryzen.me
+env:
+  SMTP_HOST: "ryzen.me"
+  SMTP_PORT: "25"
+  SMTP_USERNAME: "ryzen"
+  SMTP_FROM_EMAIL: "outline@ryzen.me"
+  SMTP_REPLY_EMAIL: "outline@ryzen.me"
+  SMTP_SECURE: "false"
+postgresql:
+  persistence:
+    size: 6Gi
+redis:
+  persistence:
+    size: 3Gi
+minio:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: cert-issuer
+    hosts:
+      - host: minio.outline.ryzen.me
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            port: 8080
+    tls: 
+      - secretName: minio.outline-tls
+        hosts:
+          - minio.outline.ryzen.me
+  persistence:
+    size: 30Gi
