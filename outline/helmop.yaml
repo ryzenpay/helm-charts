@@ -9,7 +9,7 @@ spec:
     repo: https://gitlab.com/api/v4/projects/30221184/packages/helm/stable/
     chart: outline
     valuesFiles:
-      - outline/values.yaml
+      - values.yaml
     valuesFrom:
       - secretKeyRef:
           name: outline-secret
