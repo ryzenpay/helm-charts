@@ -10,4 +10,5 @@ spec:
     chart: gatus
     valuesFiles:
       - gatus/values.yaml
+    takeOwnership: true
   defaultNamespace: gatus
