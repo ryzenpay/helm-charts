@@ -8,22 +8,38 @@ spec:
     pollingInterval: 1m
     repo: https://gitlab.com/api/v4/projects/30221184/packages/helm/stable/
     chart: outline
-    valuesFiles:
-      - values.yaml
     valuesFrom:
       - secretKeyRef:
           name: outline-secret
     values:
-      secretKey: ${secretKey}
-      utilsSecret: ${utilsSecret}
       env:
-        SMTP_PASSWORD: ${SMPT_PASSWORD}
+        SMTP_HOST: "ryzen.me"
+        SMTP_PORT: "25"
+        SMTP_USERNAME: "ryzen"
+        SMTP_FROM_EMAIL: "outline@ryzen.me"
+        SMTP_REPLY_EMAIL: "outline@ryzen.me"
+        SMTP_SECURE: "false"
       postgresql:
-        postgresqlPassword: ${postgresqlPassword}
-        postgresqlPostgresPassword: ${postgresqlPostgresPassword}
+        persistence:
+          size: 6Gi
       minio:
-        secretKey:
-          password: ${miniosecretKey}
-        accessKey:
-          password: ${minioaccessKey}
+        persistence:
+          size: 30Gi
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: cert-issuer
+        hosts:
+          - host: outline.ryzen.me
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+                port: 8080
+        tls: 
+          - secretName: outline-tls
+            hosts:
+              - outline.ryzen.me
+      redis:
+        persistence:
+          size: 3Gi
   defaultNamespace: outline

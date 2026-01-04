@@ -8,7 +8,26 @@ spec:
     pollingInterval: 1m
     repo: https://twin.github.io/helm-charts
     chart: gatus
-    valuesFiles:
-      - values.yaml
     takeOwnership: true
+    values:
+      env:
+        GATUS_CONFIG_PATH: /config
+      envFrom:
+        - secretRef:
+          name: gatus-secret
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: cert-issuer
+        enabled: true
+        extraPaths: []
+        hosts:
+          - uptime.ryzen.me
+        labels: {}
+        path: /
+        pathType: Prefix
+        tls:
+          - hosts:
+            - uptime.ryzen.me
+            secretName: gatus-tls
   defaultNamespace: gatus
