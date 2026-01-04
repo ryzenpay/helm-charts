@@ -1,2 +1,3 @@
 TODOS:
-    not listening to signoz values (does it listen to any) 
+    helmop not listening to values
+    fleet git control tries to take over configmap also created by helmop

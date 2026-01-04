@@ -9,6 +9,6 @@ spec:
     repo: https://twin.github.io/helm-charts
     chart: gatus
     valuesFiles:
-      - gatus/values.yaml
+      - values.yaml
     takeOwnership: true
   defaultNamespace: gatus
