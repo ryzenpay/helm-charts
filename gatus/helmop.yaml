@@ -10,7 +10,4 @@ spec:
     chart: gatus
     valuesFiles:
       - gatus/values.yaml
-    valuesFrom:
-      - secretKeyRef:
-          name: gatus-secret
   defaultNamespace: gatus
