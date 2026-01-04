@@ -1,7 +1,7 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: HelmOp
 metadata:
-  name: signoz
+  name: outline
   namespace: fleet-local
 spec:
   helm:
