@@ -24,4 +24,4 @@ spec:
           - hosts:
               - auth.ryzen.me
             secretName: keycloak-tls
-  targetNamespace: keycloak
+  defaultNamespace: keycloak

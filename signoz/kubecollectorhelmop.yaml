@@ -8,4 +8,4 @@ spec:
     pollingInterval: 1m
     repo: https://charts.signoz.io
     chart: k8s-infra
-  targetNamespace: monitoring
+  defaultNamespace: monitoring

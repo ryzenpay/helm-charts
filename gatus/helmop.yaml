@@ -13,4 +13,4 @@ spec:
     valuesFrom:
       - secretKeyRef:
           name: gatus-secret
-  targetNamespace: gatus
+  defaultNamespace: gatus

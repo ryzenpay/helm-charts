@@ -25,4 +25,4 @@ spec:
              - signoz.ryzen.me
         persistence:
           size: 5Gi
-  targetNamespace: monitoring
+  defaultNamespace: monitoring
