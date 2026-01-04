@@ -7,7 +7,7 @@ spec:
   helm:
     pollingInterval: 1m
     repo: https://charts.signoz.io
-    chart: opentelemetry-collector-k8s
+    chart: k8s-infra
     values:
       config:
         exporters:
