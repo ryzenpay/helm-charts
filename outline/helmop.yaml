@@ -2,7 +2,7 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: HelmOp
 metadata:
   name: signoz
-  namespace: fleet-local
+  namespace: keycloak
 spec:
   helm:
     pollingInterval: 1m

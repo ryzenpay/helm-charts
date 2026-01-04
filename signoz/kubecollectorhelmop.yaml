@@ -2,7 +2,7 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: HelmOp
 metadata:
   name: signoz-kube-collector
-  namespace: fleet-local
+  namespace: monitoring
 spec:
   helm:
     pollingInterval: 1m
