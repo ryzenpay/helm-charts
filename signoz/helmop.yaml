@@ -2,7 +2,7 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: HelmOp
 metadata:
   name: signoz
-  namespace: monitoring
+  namespace: fleet-local
 spec:
   helm:
     pollingInterval: 1m
@@ -25,4 +25,4 @@ spec:
              - signoz.ryzen.me
         persistence:
           size: 5Gi
-  namespace: monitoring
+  targetNamespace: monitoring

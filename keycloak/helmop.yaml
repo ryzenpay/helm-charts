@@ -2,7 +2,7 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: HelmOp
 metadata:
   name: keycloak
-  namespace: keycloak
+  namespace: fleet-local
 spec:
   helm:
     pollingInterval: 1m
@@ -24,4 +24,4 @@ spec:
           - hosts:
               - auth.ryzen.me
             secretName: keycloak-tls
-  namespace: keycloak
+  targetNamespace: keycloak

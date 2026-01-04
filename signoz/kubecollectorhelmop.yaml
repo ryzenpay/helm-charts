@@ -2,10 +2,10 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: HelmOp
 metadata:
   name: signoz-kube-collector
-  namespace: monitoring
+  namespace: fleet-local
 spec:
   helm:
     pollingInterval: 1m
     repo: https://charts.signoz.io
     chart: k8s-infra
-  namespace: monitoring
+  targetNamespace: monitoring
