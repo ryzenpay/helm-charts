@@ -15,4 +15,19 @@ data:
   alert.yaml: |
     alerting: {}
   endpoints.yaml: |
-    endpoints: []
+    endpoints:
+      - name: scriptinstaller
+        url: https://script.ryzen.me
+        interval: 30s
+        conditions:
+          - "[STATUS] == 200"
+      - name: website
+        url: https://ryzen.me
+        interval: 30s
+        conditions:
+          - "[STATUS] == 200"
+      - name: container registry
+        url: https://harbor.ryzen.me
+        interval: 30s
+        conditions:
+          - "[STATUS] == 200"
