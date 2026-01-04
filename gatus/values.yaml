@@ -21,6 +21,7 @@ image:
   sha: ''
   tag: ''
 ingress:
+  enabled: true
   annotations:
     cert-manager.io/cluster-issuer: cert-issuer
   enabled: true
