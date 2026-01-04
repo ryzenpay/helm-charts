@@ -23,6 +23,6 @@ spec:
          - secretName: signoz-tls
            hosts:
              - signoz.ryzen.me
-        persistence:
-          size: 5Gi
+      persistence:
+        size: 5Gi
   defaultNamespace: monitoring

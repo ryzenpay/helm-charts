@@ -7,5 +7,10 @@ spec:
   helm:
     pollingInterval: 1m
     repo: https://charts.signoz.io
-    chart: k8s-infra
+    chart: opentelemetry-collector-k8s
+    values:
+      config:
+        exporters:
+          otlp:
+            endpoint: http://signoz-otel-collector.monitoring.svc.cluster.local:4317
   defaultNamespace: monitoring
