@@ -9,20 +9,21 @@ spec:
     repo: https://charts.signoz.io
     chart: signoz
     values:
-      ingress:
-        enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: cert-issuer
-        hosts:
-          - host: signoz.ryzen.me
-            paths:
-              - path: /
-                pathType: ImplementationSpecific
-                port: 8080
-        tls: 
-         - secretName: signoz-tls
-           hosts:
-             - signoz.ryzen.me
-      persistence:
-        size: 5Gi
+      signoz:
+        ingress:
+          enabled: true
+          annotations:
+            cert-manager.io/cluster-issuer: cert-issuer
+          hosts:
+            - host: signoz.ryzen.me
+              paths:
+                - path: /
+                  pathType: ImplementationSpecific
+                  port: 8080
+          tls: 
+          - secretName: signoz-tls
+            hosts:
+              - signoz.ryzen.me
+        persistence:
+          size: 5Gi
   defaultNamespace: monitoring
