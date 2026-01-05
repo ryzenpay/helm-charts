@@ -14,7 +14,7 @@ spec:
         GATUS_CONFIG_PATH: /config
       envFrom:
         - secretRef:
-          name: gatus-secret
+            name: gatus-secret
       ingress:
         enabled: true
         annotations:
