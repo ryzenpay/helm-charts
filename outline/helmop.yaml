@@ -26,19 +26,11 @@ spec:
         persistence:
           size: 30Gi
       ingress:
-        enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: cert-issuer
-        hosts:
-          - host: outline.ryzen.me
-            paths:
-              - path: /
-                pathType: ImplementationSpecific
-                port: 8080
-        tls: 
-          - secretName: outline-tls
-            hosts:
-              - outline.ryzen.me
+        host: outline.ryzen.me
+        tls:
+          enabled: true
+          annotations:
+            cert-manager.io/cluster-issuer: cert-issuer
       redis:
         persistence:
           size: 3Gi
