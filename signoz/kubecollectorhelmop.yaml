@@ -9,9 +9,11 @@ spec:
     repo: https://charts.signoz.io
     chart: k8s-infra
     values:
-      otelDeployment:
-        config:
-          exporters:
-            otlp:
-              endpoint: http://signoz-otel-collector.monitoring.svc.cluster.local:4317
+      otelCollectorEndpoint: http://signoz-otel-collector.monitoring.svc.cluster.local:4317
+      otelInsecure: true
+      presets:
+        otlpExporter:
+          enabled: true
+        loggingExporter:
+          enabled: true
   defaultNamespace: monitoring
