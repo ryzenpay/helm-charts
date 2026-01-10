@@ -8,9 +8,6 @@ spec:
     pollingInterval: 1m
     repo: https://helm.goharbor.io
     chart: harbor
-    valuesFrom:
-      - secretKeyRef:
-          name: outline-secret
     values:
       ingress:
         hosts: 
