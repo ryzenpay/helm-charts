@@ -1,0 +1,24 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: HelmOp
+metadata:
+  name: harbor
+  namespace: fleet-local
+spec:
+  helm:
+    pollingInterval: 1m
+    repo: https://helm.goharbor.io
+    chart: harbor
+    valuesFrom:
+      - secretKeyRef:
+          name: outline-secret
+    values:
+      ingress:
+        hosts: 
+          core: harbor.ryzen.me
+        route:
+          hosts:
+              - harbor.ryzen.me
+      annotations:
+        cert-manager.io/cluster-issuer: cert-issuer
+      externalURL: https://harbor.ryzen.me
+  defaultNamespace: harbor
