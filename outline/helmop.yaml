@@ -35,13 +35,13 @@ spec:
         persistence:
           size: 3Gi
           secretKey:
-    utilsSecret: {{ randAlphaNum 32 | b64enc | quote }}
+    utilsSecret: {{ randAlphaNum 32 | quote }}
     postgresql:
-      postgresqlPassword: {{ randAlphaNum 32 | b64enc | quote }}
-      postgresqlPostgresPassword: {{ randAlphaNum 32 | b64enc | quote }}
+      postgresqlPassword: {{ randAlphaNum 32 | quote }}
+      postgresqlPostgresPassword: {{ randAlphaNum 32 | quote }}
     minio:
       secretKey:
-        password: {{ randAlphaNum 32 | b64enc | quote }}
+        password: {{ randAlphaNum 32 | quote }}
       accessKey:
-        password: {{ randAlphaNum 32 | b64enc | quote }}
+        password: {{ randAlphaNum 32 | quote }}
   defaultNamespace: outline
