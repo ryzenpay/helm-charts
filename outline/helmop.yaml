@@ -34,4 +34,14 @@ spec:
       redis:
         persistence:
           size: 3Gi
+          secretKey:
+    utilsSecret: {{ randAlphaNum 32 | b64enc | quote }}
+    postgresql:
+      postgresqlPassword: {{ randAlphaNum 32 | b64enc | quote }}
+      postgresqlPostgresPassword: {{ randAlphaNum 32 | b64enc | quote }}
+    minio:
+      secretKey:
+        password: {{ randAlphaNum 32 | b64enc | quote }}
+      accessKey:
+        password: {{ randAlphaNum 32 | b64enc | quote }}
   defaultNamespace: outline
