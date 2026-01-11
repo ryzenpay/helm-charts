@@ -9,6 +9,7 @@ spec:
   forceSyncGeneration: 3
   pollingInterval: 1m0s
   repo: https://github.com/keycloak/keycloak-quickstarts.git
+  paths:
+    - kubernetes
   bundles:
-    - base: kubernetes
       options: keycloak.yaml
