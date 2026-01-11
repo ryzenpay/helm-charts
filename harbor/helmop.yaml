@@ -12,10 +12,10 @@ spec:
       ingress:
         hosts: 
           core: harbor.ryzen.me
-        route:
-          hosts:
-              - harbor.ryzen.me
-      annotations:
-        cert-manager.io/cluster-issuer: cert-issuer
+        annotations:
+          cert-manager.io/cluster-issuer: cert-issuer
+      route:
+        hosts:
+            - harbor.ryzen.me
       externalURL: https://harbor.ryzen.me
   defaultNamespace: harbor
