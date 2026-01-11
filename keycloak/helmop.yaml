@@ -7,7 +7,6 @@ spec:
   helm:
     pollingInterval: 1m
     repo: oci://ghcr.io/codecentric/helm-charts/keycloak
-    chart: keycloak
     values:
       ingress:
         enabled: true
