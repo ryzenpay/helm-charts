@@ -1,13 +1,13 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: helm-charts
+  name: keycloak
   namespace: fleet-local
 spec:
   branch: main
   correctDrift: {}
   forceSyncGeneration: 3
   pollingInterval: 1m0s
-  repo: https://github.com/ryzenpay/helm-charts.git
+  repo: https://github.com/keycloak/keycloak-quickstarts.git
   paths:
     - kubernetes/keycloak.yaml
