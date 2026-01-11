@@ -23,8 +23,7 @@ spec:
         persistence:
           size: 6Gi
       minio:
-        persistence:
-          size: 30Gi
+        enabled: false
       ingress:
         host: outline.ryzen.me
         tls:

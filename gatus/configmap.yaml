@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: gatus
   namespace: gatus
-  labels:
-    app.kubernetes.io/managed-by: Helm
 data:
   config2.yaml: |
     metrics: true
