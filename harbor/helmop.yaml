@@ -12,7 +12,7 @@ spec:
       expose:
         ingress:
           hosts: 
-            core: expose.ingress.hosts.core
+            core: harbor.ryzen.me
         route:
           hosts:
               - harbor.ryzen.me
