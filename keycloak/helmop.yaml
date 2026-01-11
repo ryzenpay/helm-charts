@@ -13,7 +13,6 @@ spec:
         servicePort: http
         annotations: 
           cert-manager.io/cluster-issuer: cert-issuer
-        labels: {}
         rules:
           - host: auth.ryzen.me
             paths:
