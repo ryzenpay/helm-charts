@@ -1,20 +1,17 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: gatus
+  name: gatus-conf
   namespace: gatus
 data:
-  config2.yaml: |
+  values.yaml: |
     metrics: true
     ui:
       title: "ryzen uptime"
       dashboard-heading: "rynatus"
       default-sort-by: group
-  announcements.yaml: |
     announcements: []
-  alert.yaml: |
     alerting: {}
-  endpoints.yaml: |
     endpoints:
       - name: scriptinstaller
         url: https://script.ryzen.me

@@ -10,11 +10,11 @@ spec:
     chart: gatus
     takeOwnership: true
     values:
-      env:
-        GATUS_CONFIG_PATH: /config
       envFrom:
         - secretRef:
             name: gatus-secret
+        - configMapKeyRef:
+            name: gatus-conf
       ingress:
         enabled: true
         annotations:
