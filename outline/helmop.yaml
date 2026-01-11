@@ -34,7 +34,7 @@ spec:
       redis:
         persistence:
           size: 3Gi
-          secretKey:
+    secretKey: {{ randAlphaNum 32 | quote }}
     utilsSecret: {{ randAlphaNum 32 | quote }}
     postgresql:
       postgresqlPassword: {{ randAlphaNum 32 | quote }}
