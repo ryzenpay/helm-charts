@@ -9,3 +9,5 @@ spec:
   forceSyncGeneration: 3
   pollingInterval: 1m0s
   repo: https://github.com/ryzenpay/ryzen.me.git
+  paths:
+    - manifests
