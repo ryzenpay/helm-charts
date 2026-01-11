@@ -10,4 +10,5 @@ spec:
   pollingInterval: 1m0s
   repo: https://github.com/keycloak/keycloak-quickstarts.git
   bundles:
-    - base: kubernetes/keycloak.yaml
+    - base: kubernetes
+      options: keycloak.yaml
