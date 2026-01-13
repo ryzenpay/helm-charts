@@ -8,4 +8,7 @@ spec:
     pollingInterval: 1m
     repo: https://charts.keel.sh
     chart: keel
+    values:
+      image:
+        tag: latest
   defaultNamespace: keel
