@@ -10,16 +10,22 @@ spec:
     chart: gatus
     takeOwnership: true
     values:
+      env:
+        GATUS_CONFIG_PATH: /config
       envFrom:
         - secretRef:
             name: gatus-secret
-        - configMapRef:
-            name: gatus-conf
+      extraVolumeMounts:
+        - name: gatus-config
+          mountPath: /config/
+          readOnly: true
+          existingConfigMap: gatus
+      config:
+        endpoints: []
       ingress:
         enabled: true
         annotations:
           cert-manager.io/cluster-issuer: cert-issuer
-        enabled: true
         extraPaths: []
         hosts:
           - uptime.ryzen.me
