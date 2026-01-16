@@ -13,13 +13,14 @@ spec:
         ingress:
           hosts: 
             core: harbor.ryzen.me
+          annotations:
+            cert-manager.io/cluster-issuer: cert-issuer
         route:
           hosts:
               - harbor.ryzen.me
-        certSource: secret
-        secret:
-          secretName: harbor-tls
-        annotations:
-          cert-manager.io/cluster-issuer: cert-issuer
+        tls:
+          certSource: secret
+          secret:
+            secretName: harbor-tls
       externalURL: https://harbor.ryzen.me
   defaultNamespace: harbor
