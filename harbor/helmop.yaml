@@ -16,5 +16,8 @@ spec:
         route:
           hosts:
               - harbor.ryzen.me
+        certSource: secret
+        secret:
+          secretName: harbor-tls
       externalURL: https://harbor.ryzen.me
   defaultNamespace: harbor
