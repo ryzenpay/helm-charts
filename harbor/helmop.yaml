@@ -19,5 +19,7 @@ spec:
         certSource: secret
         secret:
           secretName: harbor-tls
+        annotations:
+          cert-manager.io/cluster-issuer: cert-issuer
       externalURL: https://harbor.ryzen.me
   defaultNamespace: harbor
