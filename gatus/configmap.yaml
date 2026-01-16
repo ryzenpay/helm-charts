@@ -9,7 +9,7 @@ data:
     ui:
       title: "ryzen uptime"
       dashboard-heading: "rynatus"
-      default-sort-by: group
+      default-sort-by: name
   announcements.yaml: |
     announcements: []
   alerting.yaml: |
