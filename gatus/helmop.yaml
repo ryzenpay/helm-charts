@@ -15,11 +15,6 @@ spec:
       envFrom:
         - secretRef:
             name: gatus-secret
-      extraVolumeMounts:
-        - name: gatus-config
-          mountPath: /config/
-          readOnly: true
-          existingConfigMap: gatus
       config:
         endpoints: []
       ingress:
