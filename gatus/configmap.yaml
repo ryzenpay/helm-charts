@@ -30,7 +30,7 @@ data:
   endpoints.yaml: |
     endpoints:
       - name: script.ryzen.me
-        url: https://script.ryzen.me
+        url: https://script.ryzen.me/health
         interval: 30s
         conditions:
           - "[STATUS] == 200"
@@ -38,7 +38,7 @@ data:
           - type: discord
             description: https://script.ryzen.me
       - name: ryzen.me
-        url: https://ryzen.me
+        url: https://ryzen.me/health
         interval: 30s
         conditions:
           - "[STATUS] == 200"
@@ -46,7 +46,7 @@ data:
           - type: discord
             description: https://ryzen.me
       - name: harbor container registry
-        url: https://harbor.ryzen.me
+        url: https://harbor.ryzen.me/api/v2.0/health
         interval: 30s
         conditions:
           - "[STATUS] == 200"
