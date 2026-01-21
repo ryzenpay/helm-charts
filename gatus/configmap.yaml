@@ -24,25 +24,26 @@ data:
     alerting:
       discord:
         webhook-url: $DISCORD_WEBHOOK
+        title: ":helmet_with_white_cross: RYNATUS"
         default-alert:
           send-on-resolved: true
   endpoints.yaml: |
     endpoints:
-      - name: scriptinstaller
+      - name: script.ryzen.me
         url: https://script.ryzen.me
         interval: 30s
         conditions:
           - "[STATUS] == 200"
         alerts:
           - type: discord
-      - name: website
+      - name: ryzen.me
         url: https://ryzen.me
         interval: 30s
         conditions:
           - "[STATUS] == 200"
         alerts:
           - type: discord
-      - name: container registry
+      - name: harbor container registry
         url: https://harbor.ryzen.me
         interval: 30s
         conditions:
