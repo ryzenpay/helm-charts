@@ -12,11 +12,9 @@ spec:
     values:
       env:
         GATUS_CONFIG_PATH: /config
-        DISCORD_WEBHOOK:
-          valueFrom:
-            secretKeyRef:
-              name: gatus-secret
-              key: DISCORD_WEBHOOK
+      envFrom:
+        - secretRef:
+            name: gatus-secret
       config:
         endpoints: []
       ingress:
@@ -33,4 +31,8 @@ spec:
           - hosts:
             - uptime.ryzen.me
             secretName: gatus-tls
+      podSecurityContext:
+        sysctls:
+          - name: net.ipv4.ping_group_range
+            value: "0 65536"
   defaultNamespace: gatus
