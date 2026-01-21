@@ -4,7 +4,7 @@ metadata:
   name: gatus-config
   namespace: gatus
 data:
-  config2.yaml: |
+  config.yaml: |
     metrics: true
     ui:
       title: "ryzen uptime"
