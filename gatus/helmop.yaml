@@ -15,8 +15,7 @@ spec:
       envFrom:
         - secretRef:
             name: gatus-secret
-      config:
-        endpoints: []
+      externalConfigMap: gatus-config
       ingress:
         enabled: true
         annotations:
