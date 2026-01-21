@@ -12,9 +12,11 @@ spec:
     values:
       env:
         GATUS_CONFIG_PATH: /config
-      envFrom:
-        - secretRef:
-            name: gatus-secret
+        DISCORD_WEBHOOK:
+          valueFrom:
+            secretKeyRef:
+              name: gatus-secret
+              key: DISCORD_WEBHOOK
       config:
         endpoints: []
       ingress:

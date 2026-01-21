@@ -23,8 +23,7 @@ data:
   alerting.yaml: |
     alerting:
       discord:
-        webhook-url: ${DISCORD_WEBHOOK}
-        title: ":helmet_with_white_cross: rynatus"
+        webhook-url: $DISCORD_WEBHOOK
         default-alert:
           send-on-resolved: true
   endpoints.yaml: |
