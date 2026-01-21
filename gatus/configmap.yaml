@@ -36,6 +36,7 @@ data:
           - "[STATUS] == 200"
         alerts:
           - type: discord
+            description: https://script.ryzen.me
       - name: ryzen.me
         url: https://ryzen.me
         interval: 30s
@@ -43,6 +44,7 @@ data:
           - "[STATUS] == 200"
         alerts:
           - type: discord
+            description: https://ryzen.me
       - name: harbor container registry
         url: https://harbor.ryzen.me
         interval: 30s
@@ -50,3 +52,4 @@ data:
           - "[STATUS] == 200"
         alerts:
           - type: discord
+            description: https://harbor.ryzen.me
