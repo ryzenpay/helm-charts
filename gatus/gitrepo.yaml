@@ -1,7 +1,7 @@
 apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
-  name: gatus
+  name: gatus-git
   namespace: fleet-local
 spec:
   branch: main
