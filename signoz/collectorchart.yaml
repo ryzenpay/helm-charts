@@ -1,0 +1,17 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: signoz-kube-collector
+  namespace: monitoring
+spec:
+  chart: k8s-infra
+  repo: https://charts.signoz.io
+  targetNamespace: monitoring
+  valuesContent: |-
+    otelCollectorEndpoint: http://signoz-otel-collector.monitoring.svc.cluster.local:4317
+    otelInsecure: true
+    presets:
+      otlpExporter:
+        enabled: true
+      loggingExporter:
+        enabled: true

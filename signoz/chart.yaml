@@ -1,0 +1,21 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: signoz
+  namespace: monitoring
+spec:
+  chart: signoz
+  repo: https://charts.signoz.io
+  targetNamespace: monitoring
+  valuesContent: |-
+    signoz:
+      ingress:
+        enabled: true
+        hosts:
+          - host: signoz.ryzen.me
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+                port: 8080
+      persistence:
+        size: 5Gi

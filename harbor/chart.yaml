@@ -1,0 +1,25 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: harbor
+  namespace: harbor
+spec:
+  chart: harbor
+  repo: https://helm.goharbor.io
+  targetNamespace: harbor
+  createNamespace: true
+  valuesContent: |-
+    expose:
+      ingress:
+        hosts: 
+          core: harbor.ryzen.me
+        annotations:
+          cert-manager.io/cluster-issuer: cert-issuer
+      route:
+        hosts:
+            - harbor.ryzen.me
+      tls:
+        certSource: secret
+        secret:
+          secretName: harbor-tls
+    externalURL: https://harbor.ryzen.me

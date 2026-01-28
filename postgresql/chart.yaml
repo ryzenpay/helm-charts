@@ -1,0 +1,10 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: postgresql
+  namespace: cnpg-system
+spec:
+  chart: cloudnative-pg
+  repo: https://cloudnative-pg.github.io/charts
+  targetNamespace: cnpg-system
+  createNamespace: true
