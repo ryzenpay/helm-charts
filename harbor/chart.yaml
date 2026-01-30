@@ -23,3 +23,5 @@ spec:
         secret:
           secretName: harbor-tls
     externalURL: https://harbor.ryzen.me
+    registry:
+      relativeurls: true
