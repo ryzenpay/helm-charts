@@ -68,15 +68,16 @@ spec:
                 sleep 5
               done
               
-              php occ config:system:set allow_local_remote_servers --value=true --type=bool || true
+              php occ config:system:set allow_local_remote_servers --value=true --type=bool
 
-              php occ app:install user_oidc --keep-disabled --no-interaction || true
-              php occ app:enable user_oidc || true
+              php occ app:install user_oidc --keep-disabled --no-interaction
+              php occ app:enable user_oidc
               
               php occ user_oidc:provider keycloak \
                 --clientid="nextcloud" \
                 --clientsecret="$OIDC_CLIENT_SECRET" \
-                --discoveryuri="https://auth.ryzen.me/realms/public/.well-known/openid-configuration" || true
+                --mapping-uid="preferred_username" \
+                --discoveryuri="https://auth.ryzen.me/realms/public/.well-known/openid-configuration"
               
-              php occ config:app:set --type=string --value=0 user_oidc allow_multiple_user_backends || true
-              php occ config:app:set --type=string --value="preferred_username" user_oidc user_id || true
+              php occ config:app:set --type=string --value=0 user_oidc allow_multiple_user_backends
+              php occ config:app:set --type=boolean --value=false --no-interaction user_oidc enable_default_claims
