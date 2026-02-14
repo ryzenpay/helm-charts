@@ -32,6 +32,14 @@ spec:
               key: CLIENT_SECRET
         - name: OVERWRITEPROTOCOL
           value: https
+      extraVolumes:
+        - name: oidc-config
+          configMap:
+            name: nextcloud-oidc-config
+      extraVolumeMounts:
+        - name: oidc-config
+          mountPath: /var/www/html/config/oidc.config.php
+          subPath: oidc.config.php
     internalDatabase:
       enabled: false
     externalDatabase:
@@ -67,17 +75,6 @@ spec:
                 fi
                 sleep 5
               done
-              
-              php occ config:system:set allow_local_remote_servers --value=true --type=bool
 
-              php occ app:install user_oidc --keep-disabled --no-interaction
-              php occ app:enable user_oidc
-              
-              php occ user_oidc:provider keycloak \
-                --clientid="nextcloud" \
-                --clientsecret="$OIDC_CLIENT_SECRET" \
-                --mapping-uid="preferred_username" \
-                --discoveryuri="https://auth.ryzen.me/realms/public/.well-known/openid-configuration"
-              
-              php occ config:app:set --type=string --value=0 user_oidc allow_multiple_user_backends
-              php occ config:app:set --type=boolean --value=false --no-interaction user_oidc enable_default_claims
+              php occ app:install oidc_login --keep-disabled --no-interaction
+              php occ app:enable oidc_login
